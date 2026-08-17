@@ -48,7 +48,7 @@ function GuessGame() {
     setShowPlayer(false);
     document.body.style.overflow='auto';
 
-    const res = await fetch("http://localhost:3000/guess-game/start", {
+    const res = await fetch("https://7arefa-back-end.vercel.app/guess-game/start", {
       method: "POST",
     });
 
@@ -64,7 +64,7 @@ function GuessGame() {
       return;
     }
     const res = await fetch(
-      `http://localhost:3000/guess-game/search?name=${encodeURIComponent(name.trim())}`,
+      `https://7arefa-back-end.vercel.app/guess-game/search?name=${encodeURIComponent(name.trim())}`,
     );
     const data = await res.json();
     setSuggestions(data);
@@ -76,7 +76,7 @@ function GuessGame() {
       return;
     }
 
-    const res = await fetch(`http://localhost:3000/guess-game/guess`, {
+    const res = await fetch(`https://7arefa-back-end.vercel.app/guess-game/guess`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -129,7 +129,7 @@ function GuessGame() {
 
   useEffect(() => {
     const startGame = async () => {
-      const res = await fetch("http://localhost:3000/guess-game/start", {
+      const res = await fetch("https://7arefa-back-end.vercel.app/guess-game/start", {
         method: "POST",
       });
 
