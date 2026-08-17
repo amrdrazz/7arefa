@@ -17,7 +17,7 @@ function Play() {
     ]
 
   return (
-    <div className='play flex flex-col items-center pt-5'>
+    <div className='play flex flex-col items-center pt-5 pb-17'>
         <div className="text flex flex-col items-center gap-4 mb-10">
             <h1 className='text-2xl text-green-500'>Play</h1>
 
