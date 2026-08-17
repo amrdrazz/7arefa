@@ -55,8 +55,6 @@ function GuessGame() {
     const data = await res.json();
 
     setGameId(data.gameId);
-
-    if (res.ok) console.log("Game started");
   };
 
   const getSuggestions = async (name) => {
@@ -68,12 +66,12 @@ function GuessGame() {
     );
     const data = await res.json();
     setSuggestions(data);
-    // console.log(data);
   };
 
   const makeGuess = async (id) => {
     if (guesses.filter((guess) => guess.result.id === id).length > 0) {
       return;
+      console.log('repeated player');
     }
 
     const res = await fetch(`https://7arefa-back-end.vercel.app/guess-game/guess`, {
@@ -113,8 +111,6 @@ function GuessGame() {
         block: "start",
       });
     }
-
-    console.log(data);
   };
 
   const showGameEnd = (img, stat) => {
@@ -136,8 +132,6 @@ function GuessGame() {
       const data = await res.json();
 
       setGameId(data.gameId);
-
-      if (res.ok) console.log("Game started");
     };
 
     startGame();
@@ -187,7 +181,7 @@ function GuessGame() {
                 <li
                   key={suggestion.id}
                   className="flex items-center gap-4 p-3 transition-colors cursor-pointer hover:bg-slate-900"
-                  onClick={() => {
+                  onMouseDown={() => {
                     makeGuess(suggestion.id);
                   }}
                 >
@@ -341,6 +335,7 @@ function GuessGame() {
                     setShowPlayer(false);
                     navigate('/play');
                   }}
+                  className='flex items-center gap-2 py-3 px-6 rounded-lg font-bold text-white bg-secondary border-primary shadow transition-all hover:scale-105'
                 >
                   Back to menu
                 </button>
