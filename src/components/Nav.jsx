@@ -14,7 +14,7 @@ function Nav() {
     <nav className="fixed top-0 right-0 left-0 w-full flex justify-between items-center p-3  pl-12 pr-12 bg-secondary z-50">
       <div className="logo text-3xl font-bold text-white">
         <Link to={"/"}>
-          <span className="accent bg-clip-text text-transparent">7</span>arefa
+          <span className="accent bg-clip-text text-transparent">7</span>AREFA
         </Link>
       </div>
 
@@ -27,7 +27,7 @@ function Nav() {
         />
       </div>
 
-      <ul className={`nav-links flex max-sm:flex-col max-sm:fixed max-sm:top-15 max-sm:right-0 max-sm:bg-[#0D1117] max-sm:w-auto justify-evenly gap-2 list-none text-xl w-2/3 transition-all duration-300 ease-in-out ${navLinksopen && 'hidden'}`}>
+      <ul className={`nav-links flex max-sm:flex-col max-sm:fixed max-sm:top-15 max-sm:right-0 max-sm:bg-[#0D1117] max-sm:w-auto justify-evenly gap-2 list-none text-xl w-2/3 transition-all duration-300 ease-in-out ${!navLinksopen && 'hidden'}`}>
         {links.map((link, index) => (
           <li
             key={index}

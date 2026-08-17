@@ -188,6 +188,10 @@ td,th{
     .play .games .card{
         width: 44%;
     }
+
+    .table_img{
+        width: 100%;
+    }
 }
 
 @media screen and (max-width:640px) {

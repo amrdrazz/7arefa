@@ -140,7 +140,7 @@ function GuessGame() {
   const [showPlayer, setShowPlayer] = useState(false);
 
   return (
-    <div className="guess_game flex flex-col items-center pt-5 px-4 relative">
+    <div className="guess_game flex flex-col items-center pt-5 px-4 relative pb-15">
       <div className="text flex flex-col items-center gap-4 mb-10">
         <h2 className="text-5xl max-sm:text-2xl text-white font-medium">
           GUESS THE FOOTBALLER

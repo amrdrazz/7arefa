@@ -18,12 +18,12 @@ function Home() {
         <p className="text-secondary text-2xl max-w-lg mt-5 mb-10">Test your football knowlage and prove you're a true football fan.</p>
       </div>
 
-      <div className="btns flex gap-4">
-        <Link to={'/play'} className='accent font-bold flex items-center gap-2 py-3 px-6 rounded-lg transition-all hover:scale-105'>
+      <div className="btns flex gap-4 max-[450px]:text-sm">
+        <Link to={'/play'} className='accent font-bold flex items-center gap-2 py-3 px-6 max-[450px]:px-1.5 max-[450px]:py-3 rounded-lg transition-all hover:scale-105'>
           PLAY NOW <FaArrowRight />
         </Link>
 
-        <Link to={'/how-to-play'} className='flex items-center gap-2 py-3 px-6 rounded-lg font-bold text-white bg-secondary border-primary shadow transition-all hover:scale-105'>
+        <Link to={'/how-to-play'} className='flex items-center gap-2 py-3 px-6 max-[450px]:px-1.5 max-[450px]:py-2 rounded-lg font-bold text-white bg-secondary border-primary shadow transition-all hover:scale-105'>
           <FaRegQuestionCircle /> HOW TO PLAY
         </Link>
       </div>
