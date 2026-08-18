@@ -3,7 +3,8 @@ import React from 'react'
 import { FaArrowRight } from 'react-icons/fa'
 import { Link } from 'react-router-dom'
 
-import GuessImg from '../imgs/hero.png';
+import GuessImg from '../imgs/guess-game-thumb.png';
+import PhImg from '../imgs/hero.png'
 
 function Play() {
 
@@ -29,7 +30,7 @@ function Play() {
             {
                 games.map((game, i) => (
                     <div key={i} className="card flex flex-col items-center gap-4 border-primary bg-secondary rounded-2xl p-5">
-                        <div className="img max-w-48">
+                        <div className="img max-w-48 rounded-xl overflow-hidden">
                             <img src={game.img} alt="" className='w-full' />
                         </div>
 
@@ -49,8 +50,8 @@ function Play() {
             }
 
             <div className="card flex flex-col items-center gap-4 border-primary bg-secondary rounded-2xl p-5">
-                <div className="img max-w-48">
-                    <img src={GuessImg} alt="" className='w-full' />
+                <div className="img max-w-48 rounded-xl overflow-hidden">
+                    <img src={PhImg} alt="" className='w-full' />
                 </div>
 
                 <div className="title">
@@ -67,8 +68,8 @@ function Play() {
             </div>
 
             <div className="card flex flex-col items-center gap-4 border-primary bg-secondary rounded-2xl p-5">
-                <div className="img max-w-48">
-                    <img src={GuessImg} alt="" className='w-full' />
+                <div className="img max-w-48 rounded-xl overflow-hidden">
+                    <img src={PhImg} alt="" className='w-full' />
                 </div>
 
                 <div className="title">

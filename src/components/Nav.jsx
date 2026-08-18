@@ -1,9 +1,27 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { IoMdMenu } from "react-icons/io";
 
 function Nav() {
+
   const [navLinksopen, setNavLinkesOpen] = useState(false);
+
+  const divRef = useRef(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (divRef.current && !divRef.current.contains(event.target)) {
+        setNavLinkesOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+  
 
   const links = [
     { text: "Play", link: "/play" },
@@ -11,7 +29,7 @@ function Nav() {
     { text: "How To Play", link: "/how-to-play" },
   ];
   return (
-    <nav className="fixed top-0 right-0 left-0 w-full flex justify-between items-center p-3  pl-12 pr-12 bg-secondary z-50">
+    <nav ref={divRef} className="fixed top-0 right-0 left-0 w-full flex justify-between items-center p-3  pl-12 pr-12 bg-secondary z-50">
       <div className="logo text-3xl font-bold text-white">
         <Link to={"/"}>
           <span className="accent bg-clip-text text-transparent">7</span>AREFA
